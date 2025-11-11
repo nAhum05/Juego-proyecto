@@ -1,14 +1,16 @@
+
 import _ from 'underscore';
 //Esta funcion crea un nuevo deck
-const crearDeck = (tipoDeCartas, tiposEspeciales) =>{
-
+export const crearDeck = (tipoDeCartas, tiposEspeciales) =>{
+    let deck = [];
+    //ciclo interactivo
     for(let i = 2; i<=10; i++){
-        for (let tipo of tipo){
-            crearDeck.push ( i + tipoDeCartas);
+        for (let tipo of tipoDeCartas){
+            deck.push ( i + tipo);
         }
     }
 
-    for (let tipo of tiposEspeciales ){
+    for (let tipo of tipos ){
         for (let esp of especiales){
             deck.push (esp + tipo);
         }
