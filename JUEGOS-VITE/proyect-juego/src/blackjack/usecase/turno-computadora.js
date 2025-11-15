@@ -1,7 +1,7 @@
 import { pedirCarta } from "./pedir-carta";
+import { valorCarta } from "./valor-carta"; 
 
 /**
- * 
  * @param {Number} puntosMinimos : puntos que tiene la computadora necesita para ganar
  * @param {HTMLElement} puntosHTML : arreglo con los elementos HTML donde se muestra los puntos 
  * @param {HTMLElement} divCartasComputadora: elemento HTML para mostrar las cartas de la computadora
@@ -11,9 +11,12 @@ export const turnoComputadora = ( puntosMinimos,puntosHTML,divCartasComputadora,
 
     if(!puntosMinimos) throw new Error('Puntos minimos son necesarios');
     if (!puntosHTML) throw new Error ('Puntos HTML son necesarios');    
+
+    let puntosComputadora = 0;
+    
     do {
         const carta = pedirCarta ( deck );
-        let puntosComputadora = 0;
+        
         puntosComputadora = puntosComputadora + valorCarta( carta );
         puntosHTML.innerText = puntosComputadora;
         
