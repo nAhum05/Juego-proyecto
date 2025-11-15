@@ -1,6 +1,6 @@
+import { crearCartaHTML } from "./crear-carta-html";
 import { pedirCarta } from "./pedir-carta";
 import { valorCarta } from "./valor-carta"; 
-
 /**
  * @param {Number} puntosMinimos : puntos que tiene la computadora necesita para ganar
  * @param {HTMLElement} puntosHTML : arreglo con los elementos HTML donde se muestra los puntos 
@@ -20,12 +20,12 @@ export const turnoComputadora = ( puntosMinimos,puntosHTML,divCartasComputadora,
         puntosComputadora = puntosComputadora + valorCarta( carta );
         puntosHTML.innerText = puntosComputadora;
         
-        // <img class="carta" src="assets/cartas/2C.png">
-        const imgCarta = document.createElement('img');
-        imgCarta.src = `assets/cartas/${ carta }.png`; //3H, JD
-        imgCarta.classList.add('carta');
-        divCartasComputadora.append( imgCarta );
+        
+        
+        const imgCarta= crearCartaHTML(carta);
 
+        divCartasComputadora.append( imgCarta );
+        //condicion de si el jugador se pasa de 21
         if( puntosMinimos > 21 ) {
             break;
         }

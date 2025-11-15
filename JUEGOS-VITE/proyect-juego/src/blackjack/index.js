@@ -1,4 +1,4 @@
-import { crearDeck,pedirCarta,valorCarta,turnoComputadora } from "./usecase";
+import { crearDeck,pedirCarta,valorCarta,turnoComputadora, crearCartaHTML } from "./usecase";
 
 /**
  * 2C = Two of Clubs
@@ -38,8 +38,8 @@ btnPedir.addEventListener('click', () => {
     puntosHTML[0].innerText = puntosJugador;
     
     //las imagenes de las cartas
+     const imgCarta= crearCartaHTML(carta);
 
-    
     divCartasJugador.append( imgCarta );
 
     if ( puntosJugador > 21 ) {
